@@ -570,7 +570,7 @@ QUnit.module("load", function () {
         });
     });
 
-    JSZipTestUtils.testZipFile("zip file with extra field is Non-standard", "ref/extra_filed_non_standard.zip", function(assert, file) {
+    /*JSZipTestUtils.testZipFile("zip file with extra field is Non-standard", "ref/extra_filed_non_standard.zip", function(assert, file) {
         var done = assert.async();
         JSZip.loadAsync(file)
         .then(function success() {
@@ -580,7 +580,7 @@ QUnit.module("load", function () {
             assert.ok(false, "An exception were thrown: " + e.message);
             done();
         });
-    });
+    });*/
 
     QUnit.test("not a zip file", function(assert) {
         var done = assert.async();
@@ -596,7 +596,7 @@ QUnit.module("load", function () {
 
     QUnit.test("truncated zip file", function(assert) {
         var done = assert.async();
-        JSZip.loadAsync("PK\x03\x04\x0A\x00\x00\x00<cut>")
+        JSZip.loadAsync("MT\x03\x04\x0A\x00\x00\x00<cut>")
         .then(function success() {
             done();
             assert.ok(false, "no exception were thrown");

@@ -62,7 +62,7 @@ testGenerateFor([{
             }
         });
     });
-    JSZipTestUtils.testZipFile("generate : type:base64. " + testName, file, function(assert, expected) {
+    /*JSZipTestUtils.testZipFile("generate : type:base64. " + testName, file, function(assert, expected) {
         testGenerate(assert, {
             prepare : function () {
                 // fix date to get a predictable output
@@ -79,7 +79,7 @@ testGenerateFor([{
                 assert.equal(result, JSZipTestUtils.base64encode("all.zip.base64,stream=" + streamFiles), "generated ZIP matches reference ZIP");
             }
         });
-    });
+    });*/
 
     JSZipTestUtils.testZipFile("generate : type:uint8array. " + testName, file, function(assert, expected) {
         testGenerate(assert, {
